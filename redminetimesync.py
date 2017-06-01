@@ -99,7 +99,8 @@ def getTimeEntries(date, config):
         assert duration > 0, "Duration for entry {} is not >0: {}".format(label, duration)
         total_duration += duration
         duration = round(duration, 1)
-        comment = time_entry[3]
+        #comment = time_entry[3]
+        comment = time_entry[0]
         # Try to find Redmine issue IDs from label using regexp defined in config file
         match = re.match(config.get('default', 'issue_id_regexp'), label)
         if match:
